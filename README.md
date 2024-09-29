@@ -52,14 +52,7 @@ To start the UI, you can either:
 
 - Use the **run.bat** script (Windows only)
   
-  Simply double-click on `run.bat` or run the command:
-  
-  ```bash
-  .
-un.bat
-  ```
-
-- **Manually run** the application:
+  Simply double-click on `run.bat` or
 
   1. Activate the virtual environment:
      
