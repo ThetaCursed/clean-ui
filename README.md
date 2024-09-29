@@ -28,7 +28,6 @@ python -m venv venv-ui
 
 Activate the virtual environment using:
 
-- For **Windows**:
   ```bash
   .\venv-ui\Scripts\activate
   ```
