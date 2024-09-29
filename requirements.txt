@@ -1,5 +1,4 @@
 transformers==4.45.1
 gradio==4.44.0
-torch==2.4.1+cu121 --index-url https://download.pytorch.org/whl/cu121
 accelerate==0.34.2
 bitsandbytes==0.44.0
