@@ -44,7 +44,10 @@ After activating the virtual environment, install the necessary dependencies fro
 ```bash
 pip install -r requirements.txt
 ```
-
+Install Torch with a separate command:
+```bash
+pip install torch==2.4.1+cu121 --index-url https://download.pytorch.org/whl/cu121
+```
 ## Usage
 
 To start the UI, you can either:
