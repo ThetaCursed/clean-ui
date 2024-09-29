@@ -30,12 +30,7 @@ Activate the virtual environment using:
 
 - For **Windows**:
   ```bash
-  .env-ui\Scriptsctivate
-  ```
-
-- For **macOS/Linux**:
-  ```bash
-  source venv-ui/bin/activate
+  .\venv-ui\Scripts\activate
   ```
 
 ### 4. Install Dependencies
@@ -58,11 +53,7 @@ To start the UI, you can either:
      
      - Windows:
        ```bash
-       .env-ui\Scriptsctivate
-       ```
-     - macOS/Linux:
-       ```bash
-       source venv-ui/bin/activate
+       .\venv-ui\Scripts\activate
        ```
 
   2. Run the Python script:
