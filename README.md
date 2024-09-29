@@ -2,7 +2,7 @@
 # Clean-UI for Llama-3.2-11B-Vision
 
 This project provides a simple and clean UI for interacting with the **Llama-3.2-11B-Vision** model. You can upload images and input prompts to generate conditional image descriptions with this UI. The interface is built using **Gradio** and **Transformers**.
-
+![](img/example.jpg)
 ## Installation
 
 To set up and run this project on your local machine, follow the steps below:
