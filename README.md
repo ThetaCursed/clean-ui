@@ -10,8 +10,6 @@ The model selection is done via the command line:
 ![](img/selection.png)
 
 
-To use the original version, update the **model_id** variable to "unsloth/Llama-3.2-11B-Vision".
-
 ![](img/preview.png)
 ## Installation
 
