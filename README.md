@@ -1,5 +1,5 @@
 
-# Clean-UI for Llama-3.2-11B-Vision
+# Clean-UI for Multi-Modal Vision Models
 
 This project provides a simple and clean UI for interacting with the **Llama-3.2-11B-Vision** and **Molmo-7B-D** model. You can upload images and input prompts to generate conditional image descriptions with this UI. The interface is built using **Gradio** and **Transformers**. 
 
