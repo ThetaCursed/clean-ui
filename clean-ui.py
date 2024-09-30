@@ -43,16 +43,15 @@ def describe_image(image, user_prompt, temperature, top_k, top_p, max_tokens, hi
     # Resize image if necessary
     image = image.resize(MAX_IMAGE_SIZE)
 
+    # Initialize cleaned_output variable
+    cleaned_output = ""
+
     # Prepare prompt with user input based on selected model
     if model_choice == "1":  # Llama Model
         prompt = f"<|image|><|begin_of_text|>{user_prompt} Answer:"
         # Preprocess the image and prompt
         inputs = processor(image, prompt, return_tensors="pt").to(model.device)
 
-        # Ensure the prompt is not repeated in the output
-        if cleaned_output.startswith(user_prompt):
-            cleaned_output = cleaned_output[len(user_prompt):].strip()
-        
         # Generate output with model
         output = model.generate(
             **inputs,
@@ -91,6 +90,10 @@ def describe_image(image, user_prompt, temperature, top_k, top_p, max_tokens, hi
         generated_tokens = output[0, inputs["input_ids"].size(1):]
         cleaned_output = processor.tokenizer.decode(generated_tokens, skip_special_tokens=True)
 
+    # Ensure the prompt is not repeated in the output
+    if cleaned_output.startswith(user_prompt):
+        cleaned_output = cleaned_output[len(user_prompt):].strip()
+        
     # Append the new conversation to the history
     history.append((user_prompt, cleaned_output))
 
