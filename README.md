@@ -1,9 +1,9 @@
 
 # Clean-UI for Llama-3.2-11B-Vision
 
-This project provides a simple and clean UI for interacting with the **Llama-3.2-11B-Vision** model. You can upload images and input prompts to generate conditional image descriptions with this UI. The interface is built using **Gradio** and **Transformers**. 
+This project provides a simple and clean UI for interacting with the **Llama-3.2-11B-Vision** and **Molmo-7B-D** model. You can upload images and input prompts to generate conditional image descriptions with this UI. The interface is built using **Gradio** and **Transformers**. 
 
-In this instance, the Llama-3.2-11B-Vision-bnb-4bit model requires **12GB of VRAM** to operate.
+In this instance, the Llama-3.2-11B-Vision-bnb-4bit and Molmo-7B-D-bnb-4bit model requires **12GB of VRAM** to operate.
 
 To use the original version, update the **model_id** variable to "unsloth/Llama-3.2-11B-Vision".
 
