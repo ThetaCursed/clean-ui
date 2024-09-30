@@ -5,9 +5,12 @@ This project provides a simple and clean UI for interacting with the **Llama-3.2
 
 In this case, both the **Llama-3.2-11B-Vision-bnb-4bit** and **Molmo-7B-D-bnb-4bit** models need 12GB of VRAM to run.
 
+The model selection is done via the command line:
+
+
 To use the original version, update the **model_id** variable to "unsloth/Llama-3.2-11B-Vision".
 
-![](preview.png)
+![](img/preview.png)
 ## Installation
 
 To set up and run this project on your local machine, follow the steps below:
