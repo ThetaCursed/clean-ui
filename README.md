@@ -1,7 +1,7 @@
 
 # Clean-UI for Multi-Modal Vision Models
 
-This project provides a simple and clean UI for interacting with the **Llama-3.2-11B-Vision** and **Molmo-7B-D** model.
+This project offers a straightforward and user-friendly interface for working with the **Llama-3.2-11B-Vision** and **Molmo-7B-D** models.
 
 In this case, both the **Llama-3.2-11B-Vision-bnb-4bit** and **Molmo-7B-D-bnb-4bit** models need 12GB of VRAM to run.
 
