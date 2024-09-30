@@ -12,6 +12,9 @@ model = MllamaForConditionalGeneration.from_pretrained(
 )
 processor = AutoProcessor.from_pretrained(model_id)
 
+# Visual theme
+visual_theme = gr.themes.Default() # Default, Soft or Monochrome
+
 # Constants
 MAX_OUTPUT_TOKENS = 2048
 MAX_IMAGE_SIZE = (1120, 1120)
@@ -58,7 +61,7 @@ def clear_chat():
 
 # Gradio Interface
 def gradio_interface():
-    with gr.Blocks() as demo:
+    with gr.Blocks(visual_theme) as demo:
         gr.HTML(
         """
     <h1 style='text-align: center'>
