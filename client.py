@@ -74,7 +74,7 @@ for i in range(argumentStart, len(sys.argv)):
     response = result[0][1]
     
     #Printout on screen
-    print("Processing ",i-argumentStart,"/",len(sys.argv)-argumentStart)
+    print("Processing ",1+i-argumentStart,"/",len(sys.argv)-argumentStart)
     print("Image :",image_path,"\nResponse:", result[0][1])
 
     #Store each path as the key pointing to each description
