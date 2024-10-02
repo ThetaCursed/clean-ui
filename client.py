@@ -52,6 +52,7 @@ client = Client("http://%s:%s"%(ip,port))
 #client.view_api() 
 
 results=dict()
+results["prompt"] = user_prompt
 
 for i in range(argumentStart, len(sys.argv)):
     # Path to the image
@@ -80,5 +81,6 @@ for i in range(argumentStart, len(sys.argv)):
     #Store each path as the key pointing to each description
     results[image_path]=response
 
+print("Storing results in JSON file ",output_file)
 with open(output_file, "w") as outfile: 
     json.dump(results, outfile)
