@@ -1,6 +1,7 @@
+import json
 import sys
 from gradio_client import Client, handle_file
-#python3 -m pip install gradio_client
+#python3 -m pip install gradio-client
 
 
 # Replace with the actual server URL if different
@@ -10,7 +11,7 @@ port="8080"
 # Define the user prompt (caption)
 user_prompt = "Thoroughly and carefully describe this image."
 
-output_file = "output.csv"
+output_file = "output.json"
 
 #Hyper parameters
 temperature=0.6
@@ -18,7 +19,7 @@ top_k=50
 top_p=0.9
 max_tokens=100
 
-argumentStart = 0
+argumentStart = 1
 if (len(sys.argv)>1):
        for i in range(0, len(sys.argv)):
            if (sys.argv[i]=="--ip"):
@@ -50,13 +51,11 @@ if (len(sys.argv)>1):
 client = Client("http://%s:%s"%(ip,port))  
 #client.view_api() 
 
-with open(output_file, "w") as file:
- for i in range(argumentStart, len(sys.argv)):
-    file.write("input,output\n") 
+results=dict()
+
+for i in range(argumentStart, len(sys.argv)):
     # Path to the image
     image_path = sys.argv[i]
-    file.write(image_path) 
-    file.write(",") 
     
     # Send the image file path and the prompt to the Gradio app for processing
     result = client.predict(
@@ -75,10 +74,11 @@ with open(output_file, "w") as file:
     response = result[0][1]
     
     #Printout on screen
-    print("Processing ",i-argumentStart,"/",len(sys.argv))
+    print("Processing ",i-argumentStart,"/",len(sys.argv)-argumentStart)
     print("Image :",image_path,"\nResponse:", result[0][1])
 
-    file.write("\"") 
-    file.write(response) 
-    file.write("\"\n") 
+    #Store each path as the key pointing to each description
+    results[image_path]=response
 
+with open(output_file, "w") as outfile: 
+    json.dump(results, outfile)

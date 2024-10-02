@@ -189,4 +189,4 @@ def gradio_interface():
 
 # Launch the interface
 demo = gradio_interface()
-demo.launch(server_name=server_name,port=port)
+demo.launch(server_name=server_name, server_port=int(port))
