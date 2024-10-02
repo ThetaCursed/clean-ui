@@ -1,17 +1,34 @@
 import gradio as gr
 import torch
 import os
+import sys
 from PIL import Image
 from transformers import MllamaForConditionalGeneration, AutoModelForCausalLM, AutoProcessor, GenerationConfig
 
 # Set memory management for PyTorch
 os.environ['PYTORCH_CUDA_ALLOC_CONF'] = 'max_split_size_mb:128'  # or adjust size as needed
 
-# Model selection menu in terminal
-print("Select a model to load:")
-print("1. Llama-3.2-11B-Vision-Instruct-bnb-4bit")
-print("2. Molmo-7B-D-bnb-4bit")
-model_choice = input("Enter the number of the model you want to use: ")
+
+port="8080"
+server_name="127.0.0.1"
+model_choice="0"
+if (len(sys.argv)>1):
+       for i in range(0, len(sys.argv)):
+           if (sys.argv[i]=="--llama"):
+              model_choice="1"
+           if (sys.argv[i]=="--nocrop"):
+              model_choice="2" 
+           if (sys.argv[i]=="--bind"):
+              server_name=sys.argv[i+1]
+              port=sys.argv[i+2]
+
+
+if (model_choice=="0"):
+    # Model selection menu in terminal
+   print("Select a model to load:")
+   print("1. Llama-3.2-11B-Vision-Instruct-bnb-4bit")
+   print("2. Molmo-7B-D-bnb-4bit")
+   model_choice = input("Enter the number of the model you want to use: ")
 
 if model_choice == "1":
     model_id = "unsloth/Llama-3.2-11B-Vision-Instruct-bnb-4bit"
@@ -154,7 +171,8 @@ def gradio_interface():
                 generate_button.click(
                     fn=describe_image, 
                     inputs=[image_input, user_prompt, temperature, top_k, top_p, max_tokens, chat_history],
-                    outputs=[chat_history]
+                    outputs=[chat_history],
+                    api_name="predict"
                 )
 
                 # Define the action for the clear button
@@ -168,4 +186,4 @@ def gradio_interface():
 
 # Launch the interface
 demo = gradio_interface()
-demo.launch()
+demo.launch(server_name=server_name,port=port)
