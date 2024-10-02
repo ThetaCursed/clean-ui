@@ -11,16 +11,19 @@ os.environ['PYTORCH_CUDA_ALLOC_CONF'] = 'max_split_size_mb:128'  # or adjust siz
 
 port="8080"
 server_name="127.0.0.1"
+
 model_choice="0"
 if (len(sys.argv)>1):
        for i in range(0, len(sys.argv)):
            if (sys.argv[i]=="--llama"):
               model_choice="1"
-           if (sys.argv[i]=="--nocrop"):
-              model_choice="2" 
+           if (sys.argv[i]=="--molmo"):
+              model_choice="2"
+           if (sys.argv[i]=="--bind_all"):
+              server_name="0.0.0.0"
            if (sys.argv[i]=="--bind"):
-              server_name=sys.argv[i+1]
-              port=sys.argv[i+2]
+              server_name = sys.argv[i+1]
+              port        = sys.argv[i+2]
 
 
 if (model_choice=="0"):
