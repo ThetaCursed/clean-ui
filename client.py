@@ -104,6 +104,6 @@ for i,image_path in enumerate(files):
     #Store each path as the key pointing to each description
     results[image_path]=response
 
-print("Storing results in JSON file ",output_file)
+print("\n\n\nStoring results in JSON file ",output_file)
 with open(output_file, "w") as outfile: 
     json.dump(results, outfile)
