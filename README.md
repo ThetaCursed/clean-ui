@@ -77,6 +77,17 @@ To start the UI, you can either:
      python clean-ui.py
      ```
 
+
+
+## Client
+
+You can use the gradio client to programatically script prompts and retreive JSON files with descriptions.
+For example using the following command will retreive descriptions for the two images in the img/ subdirectory
+```
+python3 client.py img/preview.png img/selection.png
+```
+
+
 ## Features
 
 - Upload an image and enter a prompt to generate an image description.
