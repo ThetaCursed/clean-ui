@@ -5,6 +5,8 @@ This project offers a user-friendly interface for working with the **Llama-3.2-1
 
 In this case, both the **Llama-3.2-11B-Vision-bnb-4bit** and **Molmo-7B-D-bnb-4bit** models need 12GB of VRAM to run.
 
+The code is tested and runs on Ubuntu 22.04.5 / Python 3.10.12
+
 The model selection is done via the command line:
 
 ![](img/selection.png)
