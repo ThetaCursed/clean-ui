@@ -48,13 +48,6 @@ USER ${user_name}
 WORKDIR /home/${user_name}/
  
 
-# Create and mount the RAM disk when the container starts
-#RUN ln -s /home/${user_name}/ram /ram && chmod 777 /home/${user_name}/ram
-
-#Read/Write: git clone ssh://ics\\ammarkov@cvrlcode.ics.forth.gr:29418/users/ammarkov/ammarkov.git
-#Read only: git clone https://ics\\ammarkov@cvrlcode.ics.forth.gr:8443/r/users/ammarkov/ammarkov.git
-
-#RUN git config --global http.sslverify false
-#RUN cd /home/${user_name}/workspace && git clone git@github.com:FORTH-ICS-CVRL-HCCV/RGBToPoseDetect2D.git && cd RGBToPoseDetect2D && ./scripts/setup.sh
-#RUN /home/${user_name}/workspace/scripts/setup.sh
+#RUN cd /home/${user_name}/workspace && git clone git@github.com:AmmarkoV/clean-ui.git && cd clean-ui && ./scripts/linux_setup.sh
+#RUN /home/${user_name}/workspace/scripts/linux_setup.sh
 
