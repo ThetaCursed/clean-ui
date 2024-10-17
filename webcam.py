@@ -8,7 +8,7 @@ import tempfile
 #python3 -m pip install opencv-python gradio-client
 
 # Replace with the actual server URL if different
-ip   = "139.91.90.47"
+ip   = "127.0.0.1"
 port = "8080"
 
 # Define the user prompt (caption)
